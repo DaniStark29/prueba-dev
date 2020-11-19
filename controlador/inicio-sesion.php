@@ -3,7 +3,7 @@
     require_once '../modelo/metodos.php';
 
     $correo = $_POST['correo'];
-    $contrasenia = $_POST['contrasenia'];
+    $contrasenia = md5($_POST['contrasenia']);
 
 
     $datos = array(
@@ -13,10 +13,14 @@
 
     $obj = new metodos();
     $respuesta = $obj->inicioSesionUsuario($datos);
-    echo $respuesta;
-    if ($respuesta == 1) {
+    echo $respuesta[0];
+    if ($respuesta) {
+        session_start();
+        $_SESSION['id'] = $respuesta[0];
+        $_SESSION['nombre'] = $respuesta[1];
+        $_SESSION['correo'] = $respuesta[2];
+        $_SESSION['contrasenia'] = $respuesta[3];
         header('location:../home.php');
-        echo 'Usuario encontrado';
     } else {
         echo '! Usuario no encontrado ¡';
     }

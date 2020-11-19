@@ -9,15 +9,15 @@
     <form action="controlador/insertar-usuario.php" method="post">
         <label for="">Nombre de usuario</label>
         <p></p>
-        <input type="text" name="usuario">
+        <input type="text" name="usuario" required>
         <p></p>
         <label for="">Correo</label>
         <p></p>
-        <input type="email" name="correo">
+        <input type="email" name="correo" required>
         <p></p>
         <label for="">Contraseña</label>
         <p></p>
-        <input type="password" name="contrasenia">
+        <input type="password" name="contrasenia" required>
         <p></p>
         <button>Registrarse</button>
     </form>

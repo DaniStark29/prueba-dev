@@ -1,21 +1,20 @@
 <?php
+
     require_once '../conexion.php';
     require_once '../modelo/metodos.php';
-
-    $usurio = $_POST['usuario'];
-    $correo = $_POST['correo'];
+    
     $contrasenia = md5($_POST['contrasenia']);
-
+    $id = $_POST['id'];
 
     $datos = array(
-        $usurio,
-        $correo,
-        $contrasenia
+        $contrasenia,
+        $id
     );
 
     $obj = new metodos();
-    if ($obj->registroNuevoUsuario($datos) == 1) {
+    if ($obj->cambiarContrasenia($datos) == 1) {
         header('location:../index.php');
+        session_destroy();
     } else {
         echo '! Error al agregar ¡';
     }

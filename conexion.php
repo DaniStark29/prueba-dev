@@ -17,11 +17,11 @@
     }
 
     // declarando objeto de prueba de conexión
-    $obj = new conectar_BD();
-    if ($obj->conexion()) {
-        echo 'Conexion exitosa';
-    }else{
-        echo 'Error en la conexión';
-    }
+    // $obj = new conectar_BD();
+    // if ($obj->conexion()) {
+    //     echo 'Conexion exitosa';
+    // }else{
+    //     echo 'Error en la conexión';
+    // }
 
 ?>

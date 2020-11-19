@@ -6,10 +6,10 @@
     <title>Inicio de sesión</title>
 </head>
 <body>
-    <form action="procesos/insertar-usuario.php" method="post">
+    <form action="controlador/inicio-sesion.php" method="post">
         <label for="">Coreo electronico</label>
         <p></p>
-        <input type="text" name="correo">
+        <input type="email" name="correo">
         <p></p>
         <label for="">Contraseña</label>
         <p></p>
